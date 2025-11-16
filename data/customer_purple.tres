@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CustomerData" load_steps=2 format=3 uid="uid://moqnf6dkhkjq"]
+
+[ext_resource type="Script" uid="uid://dw7010yhl1r76" path="res://data/customer_data.gd" id="1_taiki"]
+
+[resource]
+script = ExtResource("1_taiki")
+body_sprite_path = "uid://bsnhi0eghhoh"
+face_sprite_path = "uid://b5jk47et10yef"
+hand_sprite_path = "uid://503h4r5lntqe"
+metadata/_custom_type_script = "uid://dw7010yhl1r76"

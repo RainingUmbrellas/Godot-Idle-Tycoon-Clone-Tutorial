@@ -1,0 +1,60 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhr4kdq7hvlpj"]
+
+[ext_resource type="PackedScene" uid="uid://b5crn8rg0lkpl" path="res://scenes/cashier/cashier.tscn" id="1_duem0"]
+[ext_resource type="Script" uid="uid://bn3hc8poi84od" path="res://scenes/customer/customer.gd" id="2_qqtjw"]
+[ext_resource type="Texture2D" uid="uid://caiqe255q7hs" path="res://Idle Tycoon Assets/Sprites/UI/circle.png" id="3_fd46v"]
+[ext_resource type="Texture2D" uid="uid://byxshsp5jhhw1" path="res://Idle Tycoon Assets/Sprites/UI/Coffee.png" id="4_k1bqq"]
+[ext_resource type="FontFile" uid="uid://fkmtg2y181q" path="res://Idle Tycoon Assets/Fonts/Bake Soda.otf" id="5_k1bqq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6bdyt"]
+font = ExtResource("5_k1bqq")
+font_size = 45
+font_color = Color(0, 0, 0, 1)
+
+[node name="Customer" instance=ExtResource("1_duem0")]
+script = ExtResource("2_qqtjw")
+
+[node name="ItemBox" type="Control" parent="." index="2"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -148.0
+offset_top = -151.0
+offset_right = -48.0
+offset_bottom = -51.0
+
+[node name="TextureRect" type="TextureRect" parent="ItemBox" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fd46v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemIMG" type="TextureRect" parent="ItemBox/TextureRect" index="0"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(65, 65)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 14.0
+offset_right = 67.0
+offset_bottom = 79.0
+texture = ExtResource("4_k1bqq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ItemLabel" type="Label" parent="ItemBox/TextureRect" index="1"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 57.0
+offset_top = 23.0
+offset_right = 97.0
+offset_bottom = 86.0
+text = "3"
+label_settings = SubResource("LabelSettings_6bdyt")
+horizontal_alignment = 1
+vertical_alignment = 1

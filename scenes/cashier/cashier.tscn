@@ -1,0 +1,170 @@
+[gd_scene load_steps=10 format=3 uid="uid://b5crn8rg0lkpl"]
+
+[ext_resource type="Script" uid="uid://cn0hejbwqo31t" path="res://scenes/cashier/cashier.gd" id="1_erpnb"]
+[ext_resource type="Texture2D" uid="uid://fbtkt6p2s8ag" path="res://Idle Tycoon Assets/Sprites/shadow.png" id="1_ks7a0"]
+[ext_resource type="Texture2D" uid="uid://dxpeuiiljjlif" path="res://Idle Tycoon Assets/Sprites/Characters/pink_body_square.png" id="2_erpnb"]
+[ext_resource type="Texture2D" uid="uid://jf60677t635w" path="res://Idle Tycoon Assets/Sprites/Characters/face_a.png" id="3_2t7dy"]
+[ext_resource type="Texture2D" uid="uid://dottcaaqxv6sp" path="res://Idle Tycoon Assets/Sprites/Characters/pink_hand_closed.png" id="4_6b6cf"]
+
+[sub_resource type="Animation" id="Animation_erpnb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Face:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/HandLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(70, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/HandRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-71, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ks7a0"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals/Face:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals/HandLeft:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(70, 0), Vector2(70, 10)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Visuals/HandRight:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-71, 0), Vector2(-71, 10)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Visuals:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2t7dy"]
+resource_name = "move"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.1, 0.9), Vector2(0.9, 1.1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6b6cf"]
+_data = {
+&"RESET": SubResource("Animation_erpnb"),
+&"idle": SubResource("Animation_ks7a0"),
+&"move": SubResource("Animation_2t7dy")
+}
+
+[node name="Cashier" type="Node2D"]
+script = ExtResource("1_erpnb")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="Shadow" type="Sprite2D" parent="Visuals"]
+modulate = Color(1, 1, 1, 0.47058824)
+position = Vector2(0, 32)
+texture = ExtResource("1_ks7a0")
+
+[node name="Body" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("2_erpnb")
+
+[node name="Face" type="Sprite2D" parent="Visuals"]
+texture = ExtResource("3_2t7dy")
+
+[node name="HandLeft" type="Sprite2D" parent="Visuals"]
+position = Vector2(70, 0)
+rotation = 3.1415927
+scale = Vector2(-1, 1)
+texture = ExtResource("4_6b6cf")
+
+[node name="HandRight" type="Sprite2D" parent="Visuals"]
+position = Vector2(-71, 0)
+rotation = 3.1415927
+texture = ExtResource("4_6b6cf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_6b6cf")
+}
+autoplay = "idle"

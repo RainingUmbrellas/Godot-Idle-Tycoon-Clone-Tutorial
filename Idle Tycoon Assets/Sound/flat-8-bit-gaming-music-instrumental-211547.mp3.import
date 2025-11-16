@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ee1clshwyfr0"
+path="res://.godot/imported/flat-8-bit-gaming-music-instrumental-211547.mp3-b28ffb76ca7f070b3d0312a118dafdb4.mp3str"
+
+[deps]
+
+source_file="res://Idle Tycoon Assets/Sound/flat-8-bit-gaming-music-instrumental-211547.mp3"
+dest_files=["res://.godot/imported/flat-8-bit-gaming-music-instrumental-211547.mp3-b28ffb76ca7f070b3d0312a118dafdb4.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
